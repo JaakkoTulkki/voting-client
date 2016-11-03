@@ -17,6 +17,8 @@ export default React.createClass({
     },
 
     render: function () {
+        console.log('Vote render');
+      console.log(this.props);
         return <div className="voting">
             {this.getPair().map(entry =>
                 <button key={entry}

@@ -7,6 +7,8 @@ import Vote from './Vote';
 export const Voting = React.createClass({
     mixins: [PureRenderMixin],
     render: function () {
+      console.log('in render in voting');
+      console.log(this.props);
         return <div>
             {this.props.winner ?
                 <Winner ref="winner" winner={this.props.winner}/> :
@@ -17,9 +19,12 @@ export const Voting = React.createClass({
 });
 
 function mapStateToProps(state){
+  console.log("in voting mapSTateToProps");
+  console.log(state);
   return {
     pair: state.getIn(['vote', 'pair']),
-    winner: staste.get('winner')
+    winner: state.get('winner'),
+    vote: (entry) => console.log(entry)
   };
 }
 

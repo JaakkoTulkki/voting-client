@@ -5,6 +5,8 @@ function setState(state, newState) {
 }
 
 export default function (state = Map(), action) {
+  console.log('reducer');
+  console.log(state);
   switch (action.type){
     case 'SET_STATE':
       return setState(state, action.state);
